@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FormationController;
+use App\Http\Controllers\admin\HomeAdminController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +19,48 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', HomeController::class)->name('home');
+
+// Service routes
+
+Route::get('/services/list', [ServiceController::class, 'index'])->name('services.list');
+Route::get('/services/show/{service_id}', [ServiceController::class, 'show'])->name('services.show');
+
+
+// About
+
+Route::get('/about', AboutController::class)->name('about');
+
+// Contact
+
+Route::get('/contact', ContactController::class)->name('contact.page');
+
+
+// Formations routes
+
+Route::get('/formations/list', [FormationController::class, 'index'])->name('formations.list');
+Route::get('/formations/show/{formation_id}', [FormationController::class, 'show'])->name('formations.show');
+
+
+// Events routes
+
+Route::get('/events/list', function () {
+    return 'Events';
+})->name('events.list');
+Route::get('/events/show/{event_id}', function () {
+    return 'Event';
+})->name('events.show');
+
+
+//  Blog routes
+
+Route::get('/blog/list', function () {
+    return 'Blog';
+})->name('blog.list');
+
+Route::get('/blog/show/{article_id}', function () {
+    return 'Blog Article';
+})->name('blog.show');
+
+
+Route::get('/admin/home', [HomeAdminController::class, 'index'])->name('admin.home');
