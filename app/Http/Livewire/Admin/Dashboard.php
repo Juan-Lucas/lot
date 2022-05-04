@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Formation;
@@ -10,7 +12,7 @@ class Dashboard extends Component
 
     public $formations = [];
 
-    public function mount()
+    public function mount() : void
     {
         $this->formations = Formation::all();
     }
