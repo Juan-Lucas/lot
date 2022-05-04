@@ -4,7 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FormationController;
-use App\Http\Controllers\admin\HomeAdminController;
+use App\Http\Controllers\Admin\FormationsController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
@@ -71,4 +71,4 @@ Route::get('/blog/show/{article_id}', function () {
 Route::any('/admin/login', LoginController::class)->name('admin.login');
 Route::any('/admin/logout', LogoutController::class)->name('admin.logout');
 Route::get('/admin/home', DashboardController::class)->name('admin.dashboard');
-Route::get('/admin/formations', FormationController::class)->name('admin.formations');
+Route::get('/admin/formations', FormationsController::class)->name('admin.formations');
