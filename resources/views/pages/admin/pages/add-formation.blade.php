@@ -1,11 +1,11 @@
 @extends('pages.admin.layouts.app')
 
-@section('title', 'FORMATIONS')
+@section('title', "AJOUTER")
 
 @section('content')
 
     @include('pages.admin.includes.nav-bar')
 
-    @livewire('admin.formations')
+    @livewire('admin.add-formations')
 
 @endsection

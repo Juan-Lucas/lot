@@ -6,7 +6,7 @@
                 <ul class="navbar-nav mr-3">
                     <li><a href="#" data-toggle="sidebar"
                            class="nav-link nav-link-lg
-                            collapse-btn"> <i
+                                collapse-btn"> <i
                                 data-feather="align-justify"></i></a></li>
                     <li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
                             <i data-feather="maximize"></i>
@@ -22,7 +22,7 @@
                         <div class="dropdown-title">{{ session('loggedIn_user')->name }}</div>
                         <a href="profile.html" class="dropdown-item has-icon"> <i
                                 class="far
-                                fa-user"></i> Profil
+                                    fa-user"></i> Profil
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('admin.logout') }}" class="dropdown-item has-icon text-danger"> <i
@@ -34,7 +34,9 @@
             </ul>
         </nav>
 
-        {{-- {{ Route::current()->getName() == 'admin.login' ? "<div></div>" : @include("templates.admin.includes.nav-bar") }} --}}
+        {{-- side-bar starts --}}
+
+        {{-- side-bar end --}}
 
         <div class="main-sidebar sidebar-style-2">
             <aside id="sidebar-wrapper">
@@ -52,27 +54,44 @@
                     </li>
                     <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="check-square"></i><span>Demandes</span></a>
+                                data-feather="book"></i><span>Formations</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" wire:click.prevent=""
-                                   href="#">Liste des demandes</a>
+                            <li><a class="nav-link" href="{{ route('admin.formations.add') }}">Ajouter une formation</a>
+                            </li>
+                            <li><a class="nav-link" href="{{ route('admin.formations') }}">Liste des formations</a>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="users"></i><span>Clients</span></a>
+                                data-feather="check-square"></i><span>Services</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="#">List des clients</a>
+                            <li><a class="nav-link" href="#">Liste des services</a>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                data-feather="map"></i><span>Plaques</span></a>
+                                data-feather="bookmark"></i><span>Evenements</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="#">Liste des plaques</a></li>
-                            <li><a class="nav-link" href="#">Liste categories de plaque</a></li>
+                            <li><a class="nav-link" href="#">List des evenements</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                data-feather="airplay"></i><span>Gallerie</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="nav-link" href="#">Liste des photos</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                data-feather="archive"></i><span>Contenus</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="nav-link" href="#">Slide</a>
+                            </li>
+                            <li><a class="nav-link" href="#">Profils membres</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="menu-header">PARAMETRES</li>

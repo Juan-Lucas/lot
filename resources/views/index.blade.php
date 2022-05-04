@@ -294,7 +294,7 @@
                             <div class="item">
                                 <div class="thumb">
                                     <a href="#">
-                                        <img src="{{ asset('/assets/img/courses/6.jpg') }}" alt="Thumb">
+                                        <img src="{{ asset('storage/'.$formation->image) }}" alt="Thumb">
                                     </a>
                                     <div class="overlay">
                                         <a class="btn btn-theme effect btn-sm" href="#">
@@ -305,7 +305,7 @@
                                 <div class="info">
                                     <h4><a href="#">{{ $formation->title }}</a></h4>
                                     <div class="cats">
-                                        <a href="#">Category</a>
+                                        <a href="#">{{ $formation->category_formation->name }}</a>
                                     </div>
                                     <p>
                                         {{ substr($formation->description, 0, 150) }}.
@@ -344,7 +344,7 @@
 
                     @forelse ($categories as $category)
                         <div class="col-md-3 col-sm-6 equal-height">
-                            <div class="item" style="background-image: url(assets/img/category/1.jpg);">
+                            <div class="item" style="background-image: url({{ asset('/assets/img/category/1.jpg') }});">
                                 <a href="#">
                                     <i class="flaticon-feature"></i>
                                     <div class="info">

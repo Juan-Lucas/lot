@@ -2,7 +2,7 @@
 @extends('pages.admin.layouts.app')
 
 
-@section('title', 'Dashboard')
+@section('title', 'DASHBOARD')
 
 @section('content')
 
@@ -64,7 +64,9 @@
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="book"></i><span>Formations</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="#">Liste des formations</a>
+                                <li><a class="nav-link" href="{{ route('admin.formations.add') }}">Ajouter une formation</a>
+                                </li>
+                                <li><a class="nav-link" href="{{ route('admin.formations') }}">Liste des formations</a>
                                 </li>
                             </ul>
                         </li>

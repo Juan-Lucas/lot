@@ -11,8 +11,11 @@
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('/assets/admin/css/app.min.css') }}">
     <!-- Template CSS -->
+    <link rel="stylesheet" href="{{ asset('/assets/admin/bundles/summernote/summernote-bs4.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/admin/bundles/codemirror/lib/codemirror.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/admin/bundles/datatables/datatables.min.css') }}">
       <link rel="stylesheet" href="{{  asset('/assets/admin/bundles/prism/prism.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/admin/bundles/jquery-selectric/selectric.css') }}">
     <link rel="stylesheet"
         href="{{ asset('/assets/admin/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/admin/css/style.css') }}">
@@ -39,6 +42,9 @@
     <script src="{{ asset('/assets/admin/bundles/datatables/export-tables/vfs_fonts.js') }}"></script>
     <script src="{{ asset('/assets/admin/bundles/datatables/export-tables/buttons.print.min.js') }}"></script>
     <script src="{{ asset('/assets/admin/js/page/datatables.js') }}"></script>
+     <script src="{{ asset('/assets/admin/bundles/summernote/summernote-bs4.js') }}"></script>
+     <script src="{{ asset('/assets/admin/bundles/codemirror/lib/codemirror.js') }}"></script>
+     <script src="{{ asset('/assets/admin/bundles/jquery-selectric/jquery.selectric.min.js') }}"></script>
     <!-- Page Specific JS File -->
     <script src="{{ asset('/assets/admin/js/page/index.js') }}"></script>
     <!-- Template JS File -->

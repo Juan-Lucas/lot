@@ -9,7 +9,9 @@ class Formation extends Model
 {
     use HasFactory;
 
-    public function category()
+    protected $fillable = ['title', 'category_formation_id', 'duration','description','image'];
+
+    public function category_formation()
     {
         return $this->belongsTo(CategoryFormation::class);
     }
