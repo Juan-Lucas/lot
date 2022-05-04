@@ -6,6 +6,9 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\admin\HomeAdminController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,4 +66,8 @@ Route::get('/blog/show/{article_id}', function () {
 })->name('blog.show');
 
 
-Route::get('/admin/home', [HomeAdminController::class, 'index'])->name('admin.home');
+// ADMIN ROUTES
+
+Route::any('/admin/login', LoginController::class)->name('admin.login');
+Route::any('/admin/logout', LogoutController::class)->name('admin.logout');
+Route::get('/admin/home', DashboardController::class)->name('admin.dashboard');

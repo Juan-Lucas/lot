@@ -130,8 +130,8 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="content">
-                                            <h1 data-animation="animated fadeInUp">Leaders of tomorrow, un
-                                                <span>entreprenareur</span>.
+                                            <h1 data-animation="animated fadeInUp">Leaders of tomorrow, les
+                                                <span>créateurs</span> et l’entrepreneurs.
                                             </h1>
                                             <p data-animation="animated fadeInUp">
                                                 Leaders of tomorrow est une organisation sans but lucratif qui encourage les
@@ -179,6 +179,11 @@
                                 LEADERS OF TOMORROW vise à soutenir et à promouvoir les innovations technologiques et
                                 entrepreneuriales afin d’identifier, de développer et de diffuser largement les solutions
                                 pratiques « Made in Congo ».
+                            </p>
+                            <p>
+                                Notre association a pour ambition de formé plus de 10.000 jeunes dans le haut Katanga et
+                                plus de 100.000 sur l’étendu national en leurs donnant des formations théoriques et
+                                pratiques de qualité gratuitement.
                             </p>
                         </div>
 
