@@ -8,7 +8,10 @@
                         <div class="f-item">
                             <img src="{{ asset('/assets/img/logo-light.png') }}" alt="Logo">
                             <p>
-                                Excellence decisively nay man yet impression for contrasted remarkably. There spoke happy for you are out. Fertile how old address did showing because sitting replied six. Had arose guest visit going off child she new.
+                                Leaders of tomorrow est une organisation sans but lucratif qui encourage les
+                                jeunes congolais à relever les défis les plus pressants de leurs générations
+                                (agriculture, énergie, santé etc.) à travers l’entreprenariat et la
+                                technologie.
                             </p>
                             <div class="social">
                                 <ul>
@@ -30,25 +33,22 @@
                     </div>
                     <div class="col-md-2 col-sm-6 item">
                         <div class="f-item link">
-                            <h4>Links</h4>
+                            <h4>Nos liens</h4>
                             <ul>
                                 <li>
-                                    <a href="#">Courses</a>
+                                    <a href="{{ route('formations.list') }}">Formations</a>
                                 </li>
                                 <li>
-                                    <a href="#">Event</a>
+                                    <a href="#">Evénements</a>
                                 </li>
                                 <li>
-                                    <a href="#">Gallery</a>
+                                    <a href="#">Gallerie</a>
                                 </li>
                                 <li>
-                                    <a href="#">Faqs</a>
+                                    <a href="{{ route('about') }}">Qui sommes-nous ?</a>
                                 </li>
                                 <li>
-                                    <a href="#">Teachers</a>
-                                </li>
-                                <li>
-                                    <a href="#">Contact</a>
+                                    <a href="{{ route('contact.page') }}">Contactez-nous</a>
                                 </li>
                             </ul>
                         </div>
@@ -58,30 +58,17 @@
                             <h4>Support</h4>
                             <ul>
                                 <li>
-                                    <a href="#">Documentation</a>
-                                </li>
-                                <li>
-                                    <a href="#">Forums</a>
-                                </li>
-                                <li>
-                                    <a href="#">Language Packs</a>
-                                </li>
-                                <li>
-                                    <a href="#">Release Status</a>
-                                </li>
-                                <li>
-                                    <a href="#">LearnPress</a>
-                                </li>
-                                <li>
-                                    <a href="#">Feedback</a>
+                                    <a href="{{ route('contact.page') }}">Feedback</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-4 item">
                         <div class="f-item recent-post">
-                            <h4>Popular Courses</h4>
+                            <h4>Formations Récentes</h4>
                             <ul>
+
+                                @foreach($formations as $formation)
                                 <li>
                                     <div class="thumb">
                                         <a href="#">
@@ -89,25 +76,13 @@
                                         </a>
                                     </div>
                                     <div class="info">
-                                        <a href="#">Subjects allied to Creative arts and design</a>
+                                        <a href="#">{{ $formation->title }}</a>
                                         <div class="meta-title">
-                                            <span class="post-date">12 Feb, 2018</span> - By <a href="#">Jessica</a>
+                                            <span class="post-date">{{ date_format($formation->created_at,"d - m - Y") }}</span></a>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="thumb">
-                                        <a href="#">
-                                            <img src="{{ asset('/assets/img/courses/g2.jpg') }}" alt="Thumb">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a href="#">Business and administrative subjects</a>
-                                        <div class="meta-title">
-                                            <span class="post-date">12 Feb, 2018</span> - By <a href="#">Arnold</a>
-                                        </div>
-                                    </div>
-                                </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -120,7 +95,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="col-md-6">
-                            <p>&copy; Copyright 2019. All Rights Reserved by <a href="https://www.jeanlucmupasa.com">Jean-Luc Mupasa</a></p>
+                            <p>&copy; Copyright {{ date("Y") }}. All Rights Reserved by <a href="https://www.jeanlucmupasa.com">Jean-Luc Mupasa</a></p>
                         </div>
                         <div class="col-md-6 text-right link">
                             <ul>

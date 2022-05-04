@@ -71,3 +71,4 @@ Route::get('/blog/show/{article_id}', function () {
 Route::any('/admin/login', LoginController::class)->name('admin.login');
 Route::any('/admin/logout', LogoutController::class)->name('admin.logout');
 Route::get('/admin/home', DashboardController::class)->name('admin.dashboard');
+Route::get('/admin/formations', FormationController::class)->name('admin.formations');
