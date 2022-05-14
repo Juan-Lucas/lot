@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class LogoutController extends Controller
+class ServicesController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -14,11 +15,6 @@ class LogoutController extends Controller
      */
     public function __invoke(Request $request)
     {
-        if(session()->has('loggedIn_user'))
-        {
-            session()->pull('loggedIn_user');
-            
-            redirect()->route('admin.login');
-        }
+        //
     }
 }

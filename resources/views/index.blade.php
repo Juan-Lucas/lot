@@ -130,7 +130,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="content">
-                                            <h1 data-animation="animated fadeInUp">Leaders of tomorrow, les
+                                            <h1 data-animation="animated fadeInUp">Leaders of tomorrow, les jeunes
                                                 <span>créateurs</span> et l’entrepreneurs.
                                             </h1>
                                             <p data-animation="animated fadeInUp">

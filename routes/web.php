@@ -1,15 +1,18 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\AddFormationController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EditFormationController;
+use App\Http\Controllers\Admin\FormationsController;
+use App\Http\Controllers\Admin\ShowFormationController;
+use App\Http\Controllers\Admin\UpdateFormationController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FormationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\FormationController;
-use App\Http\Controllers\Admin\FormationsController;
-use App\Http\Controllers\Admin\AddFormationController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,8 +72,20 @@ Route::get('/blog/show/{article_id}', function () {
 
 // ADMIN ROUTES
 
-Route::any('/admin/login', LoginController::class)->name('admin.login');
-Route::any('/admin/logout', LogoutController::class)->name('admin.logout');
-Route::get('/admin/home', DashboardController::class)->name('admin.dashboard');
-Route::get('/admin/formations', FormationsController::class)->name('admin.formations');
-Route::get('/admin/formations/add', AddFormationController::class)->name('admin.formations.add');
+Route::any('/admin/login', LoginController::class)
+    ->name('admin.login');
+Route::any('/admin/logout', LogoutController::class)
+    ->name('admin.logout');
+Route::get('/admin/home', DashboardController::class)
+    ->name('admin.dashboard');
+Route::get('/admin/formations', FormationsController::class)
+    ->name('admin.formations');
+Route::get('/admin/formations/add', AddFormationController::class)
+    ->name('admin.formations.add');
+Route::get('/admin/formations/show/{formation_id}', ShowFormationController::class)
+    ->name('admin.formations.show');
+Route::get('/admin/formations/edit/{formation_id}', EditFormationController::class)
+    ->name('admin.formations.edit');
+Route::put('/admin/formations/update/{formation_id}', UpdateFormationController::class)
+    ->name('admin.formations.update');
+

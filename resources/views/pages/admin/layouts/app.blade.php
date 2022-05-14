@@ -23,6 +23,7 @@
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="{{ asset('/assets/admin/css/custom.css') }}">
     <link rel='shortcut icon' type='image/x-icon' href='{{ asset('/assets/admin/img/favicon.ico') }}' />
+    @livewireStyles
 </head>
 
 <body>
@@ -52,6 +53,7 @@
     <!-- Custom JS File -->
     <script src="{{ asset('/assets/admin/js/custom.js') }}"></script>
 
+     @livewire('livewire-ui-modal')
     @livewireScripts
 </body>
 

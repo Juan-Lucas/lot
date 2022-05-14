@@ -101,7 +101,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>FORMATIONS ENCOURS</h4>
+                        <h4>LISTE DES FORMATIONS </h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -109,29 +109,30 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Client</th>
-                                    <th>Categorie</th>
+                                    <th>Titre</th>
+                                    <th>Catégorie</th>
+                                    <th>Durée</th>
                                     <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Document</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-{{--                                @foreach ($demandes as $demande)--}}
-{{--                                    <tr>--}}
-{{--                                        <td>{{ $demande->id }}</td>--}}
-{{--                                        <td>{{ $demande->client->nomcomplet }}</td>--}}
-{{--                                        <td>{{ $demande->category_plaque->name }}</td>--}}
-{{--                                        <td>{{ $demande->date }}</td>--}}
-{{--                                        <td class="badge badge-{{ $demande->status === 'Encours' ? 'warning' : 'success' }}">{{ $demande->status }}</td>--}}
-{{--                                        <td>OK</td>--}}
-{{--                                        <td>--}}
-{{--                                            <a href="#" class="btn btn-icon icon-left btn-primary"><i--}}
-{{--                                                    class="fa fa-info" aria-hidden="true"></i> Details</a>--}}
-{{--                                        </td>--}}
-{{--                                    </tr>--}}
-{{--                                @endforeach--}}
+                                @foreach ($formations as $formation)
+                                    <tr>
+                                        <td>{{ $formation->id }}</td>
+                                        <td>{{ $formation->title }}</td>
+                                        <td>{{ $formation->category_formation->name}}</td>
+                                        <td>{{ $formation->duration}}h</td>
+                                        {{--                                        <td>{{ substr($formation->description, 0, 100)}}</td>--}}
+                                        <td>{{ date_format($formation->created_at, "d - m - Y") }}</td>
+                                        <td>
+                                            <a href="#" class="btn btn-icon icon-left btn-primary"><i
+                                                    class="fa fa-info" aria-hidden="true"></i>
+                                                Détails</a>
+                                        </td>
+
+                                    </tr>
+                                @endforeach
 
                                 </tbody>
                             </table>

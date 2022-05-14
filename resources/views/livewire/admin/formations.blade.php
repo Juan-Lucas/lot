@@ -7,7 +7,12 @@
                     <div class="alert alert-success">
                         {{ session('saved') }}
                     </div>
+                @elseif(session()->has('updated'))
+                    <div class="alert alert-success">
+                        {{ session('updated') }}
+                    </div>
                 @endif
+
                 <div class="card">
                     <div class="card-header">
                         <h4>LISTE DES FORMATIONS </h4>
@@ -21,7 +26,6 @@
                                     <th>Titre</th>
                                     <th>Catégorie</th>
                                     <th>Durée</th>
-{{--                                    <th>Déscritpion</th>--}}
                                     <th>Date</th>
                                     <th>Actions</th>
                                 </tr>
@@ -33,18 +37,14 @@
                                         <td>{{ $formation->title }}</td>
                                         <td>{{ $formation->category_formation->name}}</td>
                                         <td>{{ $formation->duration}}h</td>
-{{--                                        <td>{{ substr($formation->description, 0, 100)}}</td>--}}
                                         <td>{{ date_format($formation->created_at, "d - m - Y") }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-icon icon-left btn-primary"><i
+                                            <a href="{{ route('admin.formations.show', $formation) }}" class="btn btn-icon icon-left btn-primary"><i
                                                     class="fa fa-info" aria-hidden="true"></i>
                                                 Détails</a>
-                                            <a href="#" class="btn btn-icon icon-left btn-success"><i
+                                            <a href="{{ route('admin.formations.edit', $formation) }}" class="btn btn-icon icon-left btn-success"><i
                                                     class="fa fa-edit" aria-hidden="true"></i>
                                                 Modifier</a>
-                                            <a href="#" class="btn btn-icon icon-left btn-danger"><i
-                                                    class="fa fa-trash" aria-hidden="true"></i>
-                                                Supprimer</a>
                                         </td>
 
                                     </tr>
@@ -68,3 +68,4 @@
 </div>
 </div>
 </div>
+
