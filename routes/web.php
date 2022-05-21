@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\UpdateFormationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DevenirMembreController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
@@ -59,18 +60,14 @@ Route::get('/events/show/{event_id}', function () {
 })->name('events.show');
 
 
-//  Blog routes
+//  MEMBERS routes
 
-Route::get('/blog/list', function () {
-    return 'Blog';
-})->name('blog.list');
-
-Route::get('/blog/show/{article_id}', function () {
-    return 'Blog Article';
-})->name('blog.show');
-
+Route::get('/members/register', [DevenirMembreController::class, 'index'])
+    ->name('members.devenir');
 
 // ADMIN ROUTES
+
+
 
 Route::any('/admin/login', LoginController::class)
     ->name('admin.login');
@@ -88,4 +85,3 @@ Route::get('/admin/formations/edit/{formation_id}', EditFormationController::cla
     ->name('admin.formations.edit');
 Route::put('/admin/formations/update/{formation_id}', UpdateFormationController::class)
     ->name('admin.formations.update');
-

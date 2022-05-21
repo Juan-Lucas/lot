@@ -2,136 +2,24 @@
 
 
 @section('content')
-    <!-- Start Header Top
-                                        ============================================= -->
-    <div class="top-bar-area address-one-lines bg-dark text-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 address-info">
-                    <div class="info box">
-                        <ul>
-                            <li>
-                                <i class="fas fa-map"></i>
-                                750, av Kasangulu
-                            </li>
-                            <li>
-                                <i class="fas fa-envelope-open"></i>
-                                contact@leadersoftomorrow-drc.com
-                            </li>
-                            <li>
-                                <i class="fas fa-phone"></i>
-                                +243 970 182 255
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="user-login text-right col-md-4">
-                    <a class="popup-with-form" href="#register-form">
-                        <i class="fas fa-edit"></i> Devenez membre
-                    </a>
-                    <a class="popup-with-form" href="#login-form">
-                        <i class="fas fa-user"></i> Connexion
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Header Top -->
 
-    <!-- Header
-                                        ============================================= -->
-    <header id="home">
-
-        <!-- Start Navigation -->
-        <nav class="navbar navbar-default attr-border navbar-sticky bootsnav">
-
-            <!-- Start Top Search -->
-            <div class="container">
-                <div class="row">
-                    <div class="top-search">
-                        <div class="input-group">
-                            <form action="#">
-                                <input type="text" name="text" class="form-control" placeholder="Search">
-                                <button type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Top Search -->
-
-            <div class="container">
-
-                <!-- Start Atribute Navigation -->
-                <div class="attr-nav">
-                    <ul>
-                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li class="side-menu"><a href="#"><i class="fa fa-bars"></i></a></li>
-                    </ul>
-                </div>
-                <!-- End Atribute Navigation -->
-
-                <!-- Start Header Navigation -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand" href="index.html">
-                        <img src="{{ asset('/assets/img/logo.png') }}" class="logo" alt="Logo">
-                    </a>
-                </div>
-                <!-- End Header Navigation -->
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-
-                @include('includes.navbar')
-
-            </div>
-
-            <!-- Start Side Menu -->
-
-            @include('includes.sidebar')
-
-            <!-- End Side Menu -->
-
-        </nav>
-        <!-- End Navigation -->
-
-    </header>
-    <!-- End Header -->
-
-    <!-- Start Login Form
-                                        ============================================= -->
-
-    <!-- End Login Form -->
-
-    @include('partials.login')
-
-    <!-- Start Register Form
-                                        ============================================= -->
-
-    @include('partials.register')
-
-    <!-- End Register Form -->
 
     <!-- Start Banner
-                                        ============================================= -->
+============================================= -->
     <div class="banner-area content-top-heading text-normal heading-weight-600">
         <div id="bootcarousel" class="carousel slide animate_text" data-ride="carousel">
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner text-light">
                 <div class="item active">
-                    <div class="box-table bg-fixed shadow dark" style="background-image: url(assets/img/banner/24.jpg);">
+                    <div class="box-table bg-fixed shadow dark" style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">
                         <div class="box-cell">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="content">
                                             <h1 data-animation="animated fadeInUp">Leaders of tomorrow, les jeunes
-                                                <span>créateurs</span> et l’entrepreneurs.
+                                                <span>créateurs</span> et entrepreneurs.
                                             </h1>
                                             <p data-animation="animated fadeInUp">
                                                 Leaders of tomorrow est une organisation sans but lucratif qui encourage les
@@ -140,8 +28,34 @@
                                                 technologie.
                                             </p>
                                             <a data-animation="animated fadeInDown"
-                                                class="btn circle btn-light effect btn-md"
-                                                href="{{ route('formations.list') }}">Nos formations</a>
+                                               class="btn circle btn-light effect btn-md"
+                                               href="{{ route('formations.list') }}">Nos formations</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="box-table shadow bg-fixed dark" style="background-image: url({{ asset('/assets/img/banner/25.jpg') }});">
+                        <div class="box-cell">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="content">
+                                            <h1 data-animation="animated fadeInUp">Leaders of tomorrow, les jeunes
+                                                <span>créateurs</span> et entrepreneurs.
+                                            </h1>
+                                            <p data-animation="animated fadeInUp">
+                                                Leaders of tomorrow est une organisation sans but lucratif qui encourage les
+                                                jeunes congolais à relever les défis les plus pressants de leurs générations
+                                                (agriculture, énergie, santé etc.) à travers l’entreprenariat et la
+                                                technologie.
+                                            </p>
+                                            <a data-animation="animated fadeInDown"
+                                               class="btn circle btn-light effect btn-md"
+                                               href="{{ route('formations.list') }}">Nos formations</a>
                                         </div>
                                     </div>
                                 </div>
@@ -151,6 +65,17 @@
                 </div>
             </div>
             <!-- End Wrapper for slides -->
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control shadow" href="#bootcarousel" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control shadow" href="#bootcarousel" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+                <span class="sr-only">Next</span>
+            </a>
+
         </div>
     </div>
     <!-- End Banner -->

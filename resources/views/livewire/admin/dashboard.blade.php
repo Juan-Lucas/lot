@@ -126,7 +126,7 @@
                                         {{--                                        <td>{{ substr($formation->description, 0, 100)}}</td>--}}
                                         <td>{{ date_format($formation->created_at, "d - m - Y") }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-icon icon-left btn-primary"><i
+                                            <a href="{{ route('admin.formations.show', $formation) }}" class="btn btn-icon icon-left btn-primary"><i
                                                     class="fa fa-info" aria-hidden="true"></i>
                                                 Détails</a>
                                         </td>

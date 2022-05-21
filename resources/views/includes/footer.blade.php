@@ -42,9 +42,6 @@
                                     <a href="#">Evénements</a>
                                 </li>
                                 <li>
-                                    <a href="#">Gallerie</a>
-                                </li>
-                                <li>
                                     <a href="{{ route('about') }}">Qui sommes-nous ?</a>
                                 </li>
                                 <li>

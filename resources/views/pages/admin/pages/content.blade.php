@@ -72,9 +72,9 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="check-square"></i><span>Services</span></a>
+                                    data-feather="check-square"></i><span>Membres</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="#">Liste des services</a>
+                                <li><a class="nav-link" href="#">Liste des membres</a>
                                 </li>
                             </ul>
                         </li>
@@ -87,18 +87,11 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                                    data-feather="airplay"></i><span>Gallerie</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="#">Liste des photos</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="archive"></i><span>Contenus</span></a>
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="#">Slide</a>
                                 </li>
-                                <li><a class="nav-link" href="#">Profils membres</a>
+                                <li><a class="nav-link" href="#">Profils equipes</a>
                                 </li>
                             </ul>
                         </li>
