@@ -62,8 +62,11 @@ Route::get('/events/show/{event_id}', function () {
 
 //  MEMBERS routes
 
-Route::get('/members/register', [DevenirMembreController::class, 'index'])
-    ->name('members.devenir');
+Route::get('/members/form', [DevenirMembreController::class, 'index'])
+    ->name('members.form');
+
+Route::post('/members/register',[DevenirMembreController::class, 'register'])
+    ->name('members.register');
 
 // ADMIN ROUTES
 

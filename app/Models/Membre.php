@@ -12,6 +12,7 @@ class Membre extends Model
 
     protected $fillable = [
         'nomcomplet',
+        'email',
         'profession',
         'age',
         'sexe',

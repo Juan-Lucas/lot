@@ -10,7 +10,7 @@
             <a href="{{ route('about') }}" class="active">Qui sommes-nous</a>
         </li>
          <li>
-            <a href="{{ route('members.devenir') }}" class="active">Devenez membre</a>
+            <a href="{{ route('members.form') }}" class="active">Devenez membre</a>
         </li>
         <li>
             <a href="{{ route('contact.page') }}">Contactez-nous</a>

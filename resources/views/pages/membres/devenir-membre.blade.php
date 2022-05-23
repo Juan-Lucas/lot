@@ -13,7 +13,7 @@
                     <h1>Devenir membre</h1>
                     <ul class="breadcrumb">
                         <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Accueil</a></li>
-                        <li><a href="{{ route('members.devenir') }}">/</a></li>
+                        <li><a href="{{ route('members.form') }}">/</a></li>
                         <li class="active">Devenir membre</li>
                     </ul>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="col-md-10 col-md-offset-1">
                     <form action="#" id="register-form" class="white-popup-block">
                         <div class="col-md-4 login-social">
-                            <h4>Register with social</h4>
+                            <h4>Suivez-nous sur</h4>
                             <ul>
                                 <li class="facebook">
                                     <a href="#">
@@ -50,7 +50,7 @@
                             </ul>
                         </div>
                         <div class="col-md-8 login-custom">
-                            <h4>Register a new account</h4>
+                            <h4>Faites partie des Leaders, en devenant membre.</h4>
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group">
@@ -82,11 +82,11 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <button type="submit">
-                                        Sign up
+                                        S'enregister
                                     </button>
                                 </div>
                             </div>
-                            <p class="link-bottom">Are you a member? <a href="#">Login now</a></p>
+                            <p class="link-bottom">Etes-vous deja membre ? <a href="#">Connectez-vous</a></p>
                         </div>
                     </form>
                 </div>

@@ -2,10 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryFormation;
 use App\Models\Formation;
 
 class FormationController extends Controller
 {
+
+    public $categories = [];
+
+    public $formations = [];
+
+    /**
+     * @param array $categories
+     */
+    public function __construct()
+    {
+        $this->categories = CategoryFormation::with('formations')->get();
+        $this->formations = Formation::with('category_formation')->simplePaginate(3);
+    }
+
+
     public function index()
     {
 
@@ -14,14 +30,12 @@ class FormationController extends Controller
 
     public function show(int $formation_id)
     {
+        $categories = $this->categories;
+
+        $formations = $this->formations;
 
         $formation = Formation::find($formation_id);
 
-        if ($formation !== null) {
-
-            abort(404, 'Formation not found !');
-        }
-
-        return view('pages.formations.formation', compact('formation'));
+        return view('pages.formations.formation', compact('formation','categories','formations'));
     }
 }

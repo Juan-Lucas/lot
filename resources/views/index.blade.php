@@ -218,7 +218,7 @@
                             <!-- Single Item -->
                             <div class="item">
                                 <div class="thumb">
-                                    <a href="#">
+                                    <a href="{{ route('formations.show', $formation) }}">
                                         <img src="{{ asset('storage/'.$formation->image) }}" alt="Thumb">
                                     </a>
                                     <div class="overlay">
@@ -228,9 +228,9 @@
                                     </div>
                                 </div>
                                 <div class="info">
-                                    <h4><a href="#">{{ $formation->title }}</a></h4>
+                                    <h4><a href="{{ route('formations.show', $formation) }}">{{ $formation->title }}</a></h4>
                                     <div class="cats">
-                                        <a href="#">{{ $formation->category_formation->name }}</a>
+                                        <a href="{{ route('formations.show', $formation) }}">{{ $formation->category_formation->name }}</a>
                                     </div>
                                     <p>
                                         {{ substr($formation->description, 0, 150) }}.

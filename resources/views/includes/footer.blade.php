@@ -68,12 +68,12 @@
                                 @foreach($formations as $formation)
                                 <li>
                                     <div class="thumb">
-                                        <a href="#">
-                                            <img src="{{ asset('/assets/img/courses/g1.jpg') }}" alt="Thumb">
+                                        <a href="{{ route('formations.show', $formation) }}">
+                                            <img src="{{ asset('storage/'.$formation->image) }}" alt="Thumb">
                                         </a>
                                     </div>
                                     <div class="info">
-                                        <a href="#">{{ $formation->title }}</a>
+                                        <a href="{{ route('formations.show', $formation) }}">{{ $formation->title }}</a>
                                         <div class="meta-title">
                                             <span class="post-date">{{ date_format($formation->created_at,"d - m - Y") }}</span></a>
                                         </div>
