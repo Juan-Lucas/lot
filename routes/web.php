@@ -14,6 +14,7 @@ use App\Http\Controllers\DevenirMembreController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SendMailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,27 +28,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeController::class)->name('home');
+Route::get('/', HomeController::class)
+    ->name('home');
 
 // Service routes
 
-Route::get('/services/list', [ServiceController::class, 'index'])->name('services.list');
-Route::get('/services/show/{service_id}', [ServiceController::class, 'show'])->name('services.show');
+Route::get('/services/list', [ServiceController::class, 'index'])
+    ->name('services.list');
+Route::get('/services/show/{service_id}', [ServiceController::class, 'show'])
+    ->name('services.show');
 
 
 // About
 
-Route::get('/about', AboutController::class)->name('about');
+Route::get('/about', AboutController::class)
+    ->name('about');
 
 // Contact
 
-Route::get('/contact', ContactController::class)->name('contact.page');
+Route::get('/contact', ContactController::class)
+    ->name('contact.page');
+Route::post('/contact/email', SendMailController::class)
+    ->name('contact.email');
 
 
 // Formations routes
 
-Route::get('/formations/list', [FormationController::class, 'index'])->name('formations.list');
-Route::get('/formations/show/{formation_id}', [FormationController::class, 'show'])->name('formations.show');
+Route::get('/formations/list', [FormationController::class, 'index'])
+    ->name('formations.list');
+Route::get('/formations/show/{formation_id}', [FormationController::class, 'show'])
+    ->name('formations.show');
 
 
 // Events routes

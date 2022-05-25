@@ -84,7 +84,10 @@
                                 Disponible 24/ 7. Appelez dès maintenant.
                             </p>
                         </div>
-                        <form method="POST" class="contact-form">
+                        <form method="POST" action="{{ route('contact.email') }}" class="contact-form">
+
+                            @csrf
+
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group">
