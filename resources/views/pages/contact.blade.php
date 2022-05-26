@@ -76,7 +76,7 @@
                             <img src="{{ asset('/assets/img/about.jpg') }}" alt="Thumb">
                         </div>
                     </div>
-                    <div class="col-md-6 form">
+                    <div class="col-md-6 ">
                         <div class="heading">
                             <h3>Contactez-nous</h3>
                             <p>
@@ -84,7 +84,7 @@
                                 Disponible 24/ 7. Appelez dès maintenant.
                             </p>
                         </div>
-                        <form method="POST" action="{{ route('contact.email') }}" class="contact-form">
+                        <form method="post" action="{{ route('contact.email') }}">
 
                             @csrf
 
@@ -93,7 +93,7 @@
                                     <div class="form-group">
                                         <label>Nom complet : </label>
                                         <input class="form-control" id="name" name="name"  type="text">
-                                        <span class="alert-error"></span>
+
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                         <label>Adresse mail : </label>
                                         <input class="form-control" id="email" name="email"
                                             type="email">
-                                        <span class="alert-error"></span>
+
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
                                         <label>Téléphone : </label>
                                         <input class="form-control" id="phone" name="phone"
                                             type="tel">
-                                        <span class="alert-error"></span>
+
                                     </div>
                                 </div>
                             </div>
@@ -121,20 +121,16 @@
                                 <div class="row">
                                     <div class="form-group comments">
                                         <label>Message : </label>
-                                        <textarea class="form-control" id="messae" name="message" ></textarea>
+                                        <textarea class="form-control" id="message" name="message" ></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
-                                    <button type="submit" name="submit" id="submit">
+                                    <button type="submit" >
                                         Envoyer votre message <i class="fa fa-paper-plane"></i>
                                     </button>
                                 </div>
-                            </div>
-                            <!-- Alert Message -->
-                            <div class="col-md-12 alert-notification">
-                                <div id="message" class="alert-msg"></div>
                             </div>
                         </form>
                     </div>

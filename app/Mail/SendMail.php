@@ -20,6 +20,6 @@ class SendMail extends Mailable
 
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('pages.emails.email');
     }
 }
