@@ -274,7 +274,7 @@
                                     <i class="flaticon-feature"></i>
                                     <div class="info">
                                         <h4>{{ $category->name }}</h4>
-                                        <span>(1,226) formations</span>
+                                        <span>({{ count($category->formations) }}) formations</span>
                                     </div>
                                 </a>
                             </div>
@@ -350,7 +350,7 @@
                             <div class="info-box">
                                 <img src="{{ asset('assets/img/team/guelord.jpg') }}" alt="Thumb">
                                 <div class="info-title">
-                                    <h4>Guelord Mahemba</h4>
+                                    <h4>Guelord LUBANDA</h4>
                                     <span>Directeur du personnel</span>
                                 </div>
                                 <div class="overlay">
@@ -422,7 +422,7 @@
                             <div class="info-box">
                                 <img src="{{ asset('assets/img/team/anniece.jpg') }}" alt="Thumb">
                                 <div class="info-title">
-                                    <h4>Anniece Makoumbo</h4>
+                                    <h4>Anniece FIFEN</h4>
                                     <span>Membre d'honneur</span>
                                 </div>
                                 <div class="overlay">

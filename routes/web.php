@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DevenirMembreController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
@@ -62,9 +63,8 @@ Route::get('/formations/show/{formation_id}', [FormationController::class, 'show
 
 // Events routes
 
-Route::get('/events/list', function () {
-    return 'Events';
-})->name('events.list');
+Route::get('/events/list', [EventController::class, 'index'])
+    ->name('events.list');
 Route::get('/events/show/{event_id}', function () {
     return 'Event';
 })->name('events.show');

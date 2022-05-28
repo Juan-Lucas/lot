@@ -6,7 +6,7 @@
                 <div class="f-items">
                     <div class="col-md-4 item">
                         <div class="f-item">
-                            <img src="{{ asset('/assets/img/logo-light.png') }}" alt="Logo">
+                            <h4>A propos de nous</h4>
                             <p>
                                 Leaders of tomorrow est une organisation sans but lucratif qui encourage les
                                 jeunes congolais à relever les défis les plus pressants de leurs générations
@@ -39,7 +39,7 @@
                                     <a href="{{ route('formations.list') }}">Formations</a>
                                 </li>
                                 <li>
-                                    <a href="#">Evénements</a>
+                                    <a href="{{ route('events.list') }}">Evénements</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('about') }}">Qui sommes-nous ?</a>

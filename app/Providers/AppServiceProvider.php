@@ -42,7 +42,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('index', function($view){
             $view->with('formations', Formation::with('category_formation')->get());
             $view->with('courses', Formation::with('category_formation')->paginate(4));
-            $view->with('categories', CategoryFormation::all());
+            $view->with('categories', CategoryFormation::with('formations')->get());
         });
 
         view()->composer('includes.footer', function ($view){
