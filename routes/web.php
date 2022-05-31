@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AddFormationController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EditFormationController;
 use App\Http\Controllers\Admin\FormationsController;
+use App\Http\Controllers\Admin\MembersController;
 use App\Http\Controllers\Admin\ShowFormationController;
 use App\Http\Controllers\Admin\UpdateFormationController;
 use App\Http\Controllers\Auth\LoginController;
@@ -55,46 +56,58 @@ Route::post('/contact/email', SendMailController::class)
 
 // Formations routes
 
-Route::get('/formations/list', [FormationController::class, 'index'])
-    ->name('formations.list');
-Route::get('/formations/show/{formation_id}', [FormationController::class, 'show'])
-    ->name('formations.show');
+Route::prefix('/formations/')->group(function (){
+    Route::get('list', [FormationController::class, 'index'])
+        ->name('formations.list');
+    Route::get('show/{formation_id}', [FormationController::class, 'show'])
+        ->name('formations.show');
+});
 
 
 // Events routes
 
-Route::get('/events/list', [EventController::class, 'index'])
-    ->name('events.list');
-Route::get('/events/show/{event_id}', function () {
-    return 'Event';
-})->name('events.show');
+Route::prefix('/events/')->group(function (){
+    Route::get('list', [EventController::class, 'index'])
+        ->name('events.list');
+    Route::get('show/{event_id}', function () {
+        return 'Event';
+    })->name('events.show');
+});
 
 
 //  MEMBERS routes
 
-Route::get('/members/form', [DevenirMembreController::class, 'index'])
-    ->name('members.form');
+Route::prefix('/members/')->group(function (){
+    Route::get('form', [DevenirMembreController::class, 'index'])
+        ->name('members.form');
 
-Route::post('/members/register',[DevenirMembreController::class, 'register'])
-    ->name('members.register');
+    Route::post('register',[DevenirMembreController::class, 'register'])
+        ->name('members.register');
+});
+
 
 // ADMIN ROUTES
 
 
+Route::prefix('/admin/')->group(function (){
+    Route::any('login', LoginController::class)
+        ->name('admin.login');
+    Route::any('logout', LogoutController::class)
+        ->name('admin.logout');
+    Route::get('home', DashboardController::class)
+        ->name('admin.dashboard');
+    Route::get('formations', FormationsController::class)
+        ->name('admin.formations');
+    Route::get('formations/add', AddFormationController::class)
+        ->name('admin.formations.add');
+    Route::get('formations/show/{formation_id}', ShowFormationController::class)
+        ->name('admin.formations.show');
+    Route::get('formations/edit/{formation_id}', EditFormationController::class)
+        ->name('admin.formations.edit');
+    Route::put('formations/update/{formation_id}', UpdateFormationController::class)
+        ->name('admin.formations.update');
+    Route::get('members', MembersController::class)
+        ->name('admin.members');
+});
 
-Route::any('/admin/login', LoginController::class)
-    ->name('admin.login');
-Route::any('/admin/logout', LogoutController::class)
-    ->name('admin.logout');
-Route::get('/admin/home', DashboardController::class)
-    ->name('admin.dashboard');
-Route::get('/admin/formations', FormationsController::class)
-    ->name('admin.formations');
-Route::get('/admin/formations/add', AddFormationController::class)
-    ->name('admin.formations.add');
-Route::get('/admin/formations/show/{formation_id}', ShowFormationController::class)
-    ->name('admin.formations.show');
-Route::get('/admin/formations/edit/{formation_id}', EditFormationController::class)
-    ->name('admin.formations.edit');
-Route::put('/admin/formations/update/{formation_id}', UpdateFormationController::class)
-    ->name('admin.formations.update');
+

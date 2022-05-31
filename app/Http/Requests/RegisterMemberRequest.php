@@ -28,7 +28,8 @@ class RegisterMemberRequest extends FormRequest
             'profession' => 'required',
             'age' => 'required',
             'sexe' => 'required',
-            'numero_membre' => 'nullable'
+            'password' => 'required|confirmed',
+            'numero_membre' => 'nullable|unique:membres,numero_membre'
         ];
     }
 }

@@ -28,7 +28,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <form action="#" id="register-form" class="white-popup-block">
+                    <form method="post" action="{{ route('members.register') }}" id="register-form" class="white-popup-block">
+
+                        @csrf
+
                         <div class="col-md-4 login-social">
                             <h4>Suivez-nous sur</h4>
                             <ul>
@@ -54,28 +57,68 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Email*" type="email">
+                                        <label for="nomcomplet">Nom complet</label>
+                                        <input class="form-control" name="nomcomplet" id="nomcomplet" type="text">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Username*" type="text">
+                                        <label for="email">Addresse email</label>
+                                        <input class="form-control" name="email" id="email" type="email">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Password*" type="text">
+                                        <label for="profession">Profession</label>
+                                        <input class="form-control" name="profession" type="text" id="profession">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Repeat Password*" type="text">
+                                        <label for="age">Age</label>
+                                        <input class="form-control" name="age" type="number" id="age">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="sexe">Sexe</label>
+                                        <select class="form-control" name="sexe" id="sexe">
+                                            <option value="">---------------------------------- Sélectionner votre genre ----------------------------------</option>
+                                            <option value="Homme">Homme</option>
+                                            <option value="Femme">Femme</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="username">Nom d'utilisateur</label>
+                                        <input class="form-control" name="username" id="username" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="password">Mot de passe</label>
+                                        <input class="form-control" name="password" type="password" id="password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="confirm_password">Confirmer mot de passe</label>
+                                        <input class="form-control" name="confirm_password" type="password">
                                     </div>
                                 </div>
                             </div>

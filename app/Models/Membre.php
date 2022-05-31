@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Membre extends Model
 {
@@ -16,7 +17,12 @@ class Membre extends Model
         'profession',
         'age',
         'sexe',
-        'numero_membre'
+        'user_id'
     ];
-        
+
+
+    public function user_account(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }
