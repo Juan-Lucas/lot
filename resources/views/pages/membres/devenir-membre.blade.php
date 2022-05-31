@@ -129,7 +129,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <p class="link-bottom">Etes-vous deja membre ? <a href="#">Connectez-vous</a></p>
+                            <p class="link-bottom">Etes-vous deja membre ? <a href="{{ route('members.login.form') }}">Connectez-vous</a></p>
                         </div>
                     </form>
                 </div>

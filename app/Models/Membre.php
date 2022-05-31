@@ -25,4 +25,12 @@ class Membre extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public  function nomcomplet(): Attribute
+    {
+        return new Attribute(
+            get: fn($value) => $value,
+            set: fn($value) => $value
+        );
+    }
 }

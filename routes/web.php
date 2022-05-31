@@ -15,6 +15,9 @@ use App\Http\Controllers\DevenirMembreController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginMemberController;
+use App\Http\Controllers\LogoutMemberController;
+use App\Http\Controllers\ProfileMemberController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SendMailController;
 use Illuminate\Support\Facades\Route;
@@ -83,6 +86,18 @@ Route::prefix('/members/')->group(function (){
 
     Route::post('register',[DevenirMembreController::class, 'register'])
         ->name('members.register');
+
+    Route::get('login/form',[LoginMemberController::class, 'index'])
+        ->name('members.login.form');
+
+    Route::post('login',[LoginMemberController::class, 'login'])
+        ->name('members.login');
+
+    Route::get('logout', LogoutMemberController::class)
+    ->name('members.logout');
+
+    Route::get('profile', ProfileMemberController::class)
+    ->name('members.profile');
 });
 
 
