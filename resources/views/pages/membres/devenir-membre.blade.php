@@ -87,7 +87,7 @@
                                     <div class="form-group col-md-6">
                                         <label for="sexe">Sexe</label>
                                         <select class="form-control" name="sexe" id="sexe">
-                                            {{--                                            <option value="">Sélectionner votre genre</option>--}}
+                                            <option value="">---------- Sélectionner votre genre ----------</option>
                                             <option value="Homme">Homme</option>
                                             <option value="Femme">Femme</option>
                                         </select>
