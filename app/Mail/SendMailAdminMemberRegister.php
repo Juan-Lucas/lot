@@ -7,19 +7,18 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SendMail extends Mailable
+class SendMailAdminMemberRegister extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $data;
-
-    public function __construct(array $informations)
+    public function __construct()
     {
-        $this->data = $informations;
+
     }
 
     public function build()
     {
-        return $this->view('pages.emails.email')->subject('Notification utilisateur');
+        return $this->view('pages.emails.email-register-admin')
+            ->subject('Notification de création compte membre');
     }
 }

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\RegisterMemberRequest;
+use App\Mail\SendMailAdminMemberRegister;
+use App\Mail\SendMailMemberRegister;
 use App\Models\Membre;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,7 +19,6 @@ class DevenirMembreController extends Controller
 
     public function register(Request $request)
     {
-//        var_dump($request->all());die();
         $user = User::create([
             'name' => $request->username,
             'email' => $request->email,
@@ -40,12 +40,16 @@ class DevenirMembreController extends Controller
 
         // Sending email to member
 
-//        Mail::to($member['email'])->send();
+        Mail::to($member['email'])
+            ->send(new SendMailMemberRegister());
 
         // Sending email to admin
 
-//        Mail::to('leaderssoftomorrow@gmail.com')->send();
+        Mail::to('leaderssoftomorrow@gmail.com')
+            ->send(new SendMailAdminMemberRegister());
 
-        return redirect()->route('members.form');
+        session()->flash('registred', 'Votre compte a été créé avec succès !');
+
+        return redirect()->route('members.login.form');
     }
 }

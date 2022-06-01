@@ -3,31 +3,42 @@
 
 @section('content')
 
-    <!-- Start Breadcrumb
-                                            ============================================= -->
-    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light"
-         style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Se Connecter</h1>
-                    <ul class="breadcrumb">
-                        <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Accueil</a></li>
-                        <li><a href="{{ route('members.login.form') }}">/</a></li>
-                        <li class="active">Se Connecter</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Breadcrumb -->
+
+{{--    <!-- Start Breadcrumb--}}
+{{--                                            ============================================= -->--}}
+{{--    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light"--}}
+{{--         style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-12">--}}
+{{--                    <h1>Se Connecter</h1>--}}
+{{--                    <ul class="breadcrumb">--}}
+{{--                        <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Accueil</a></li>--}}
+{{--                        <li><a href="{{ route('members.login.form') }}">/</a></li>--}}
+{{--                        <li class="active">Se Connecter</li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <!-- End Breadcrumb -->--}}
 
     <!-- Start Login
     ============================================= -->
     <div class="login-area default-padding">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-7 col-md-offset-3">
+                    @if(session()->has('registred'))
+
+                        <div class="alert alert-success" role="alert">
+                            <h4 class="alert-heading">{{ session('registred') }}!</h4>
+                            <p>Merci d'avoir pris la décision de faire bouger les choses dans votre vie afin de contruire votre futur.</p>
+                            <hr>
+                            <p class="mb-0">Vous avez pris la bonne décision. Connectez-vous a votre compte et formez-vous.</p>
+                        </div>
+
+                    @endif
                     <form method="post" action="{{ route('members.login') }}" id="login-form" class="white-popup-block">
 
                         @csrf

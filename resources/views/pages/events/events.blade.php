@@ -3,23 +3,23 @@
 
 @section('content')
 
-    <!-- Start Breadcrumb ============================================= -->
-    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light"
-         style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Nos Evénements</h1>
-                    <ul class="breadcrumb">
-                        <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Accueil</a></li>
-                        <li><a href="{{ route('events.list') }}">/</a></li>
-                        <li class="active">Nos Evénements</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Breadcrumb -->
+{{--    <!-- Start Breadcrumb ============================================= -->--}}
+{{--    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light"--}}
+{{--         style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-12">--}}
+{{--                    <h1>Nos Evénements</h1>--}}
+{{--                    <ul class="breadcrumb">--}}
+{{--                        <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Accueil</a></li>--}}
+{{--                        <li><a href="{{ route('events.list') }}">/</a></li>--}}
+{{--                        <li class="active">Nos Evénements</li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <!-- End Breadcrumb -->--}}
 
 <!-- Start Event
 ============================================= -->

@@ -3,33 +3,35 @@
 
 @section('content')
 
-    <!-- Start Breadcrumb
-                        ============================================= -->
-    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light"
-        style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Nos formations</h1>
-                    <ul class="breadcrumb">
-                        <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Accueil</a></li>
-                        <li><a href="{{ route('formations.list') }}">/</a></li>
-                        <li class="active">Nos formations</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Breadcrumb -->
+{{--    <!-- Start Breadcrumb--}}
+{{--                        ============================================= -->--}}
+{{--    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light"--}}
+{{--        style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-12">--}}
+{{--                    <h1>Nos formations</h1>--}}
+{{--                    <ul class="breadcrumb">--}}
+{{--                        <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Accueil</a></li>--}}
+{{--                        <li><a href="{{ route('formations.list') }}">/</a></li>--}}
+{{--                        <li class="active">Nos formations</li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <!-- End Breadcrumb -->--}}
 
     <!-- Start Popular Courses
                         ============================================= -->
     <div class="popular-courses default-padding bottom-less without-carousel">
         <div class="container">
             <div class="row">
+
                 <div class="popular-courses-items">
 
                     @forelse ($formations as $formation)
+
                         <!-- Single Item -->
 
                         <div class="col-md-4 col-sm-6 equal-height">

@@ -4,24 +4,24 @@
 @section('content')
 
 
-    <!-- Start Breadcrumb
-                                            ============================================= -->
-    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light"
-         style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Mon profil</h1>
-                    <ul class="breadcrumb">
-                        <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Accueil</a></li>
-                        <li><a href="{{ route('members.profile') }}">/</a></li>
-                        <li class="active">Mon profil</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Breadcrumb -->
+{{--    <!-- Start Breadcrumb--}}
+{{--                                            ============================================= -->--}}
+{{--    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light"--}}
+{{--         style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-12">--}}
+{{--                    <h1>Mon profil</h1>--}}
+{{--                    <ul class="breadcrumb">--}}
+{{--                        <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Accueil</a></li>--}}
+{{--                        <li><a href="{{ route('members.profile') }}">/</a></li>--}}
+{{--                        <li class="active">Mon profil</li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <!-- End Breadcrumb -->--}}
 
 
 
@@ -31,7 +31,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 thumb">
-                    <img src="assets/img/team/6.jpg" alt="Thumb">
+                    <img src="{{ asset('/assets/img/team/6.jpg') }}" alt="Thumb">
                 </div>
                 <div class="col-md-7 info main-content">
                     <!-- Star Tab Info -->
