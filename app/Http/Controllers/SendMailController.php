@@ -11,7 +11,10 @@ class SendMailController extends Controller
 
     public function __invoke(Request $request)
     {
-        Mail::to('leaderssoftomorrow@gmail.com')
+        // contact@leadersoftomorrow-drc.com
+        // leaderssoftomorrow@gmail.com
+        // info@leadersoftomorrow-drc.com
+        Mail::to("contact@leadersoftomorrow-drc.com")
             ->send(new SendMail($request->all()));
         return redirect()->route('contact.page');
     }

@@ -48,42 +48,51 @@
     <!-- Preloader Start -->
     <div class="se-pre-con"></div>
     <!-- Preloader Ends -->
+
     <!-- Start Header Top
-                                        ============================================= -->
-    <div class="top-bar-area address-one-lines bg-dark text-light">
+    ============================================= -->
+    <div class="top-bar-area address-two-lines bg-dark text-light">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 address-info">
                     <div class="info box">
                         <ul>
                             <li>
-                                <i class="fas fa-map"></i>
-                                750, av Kasangulu
+                                <span><i class="fas fa-map"></i> Adresse</span>750, av Kasangulu
                             </li>
                             <li>
-                                <i class="fas fa-envelope-open"></i>
-                                contact@leadersoftomorrow-drc.com
+                                <span><i class="fas fa-envelope-open"></i> Email</span>contact@leadersoftomorrow-drc.com
                             </li>
                             <li>
-                                <i class="fas fa-phone"></i>
-                                +243 970 182 255
+                                <span><i class="fas fa-phone"></i> Contact</span>+243 970 182 255
                             </li>
                         </ul>
                     </div>
+                </div>
+                <div class="user-login text-right col-md-4">
+                    <a href="{{ route('members.form') }}"><i class="fas fa-edit"></i> S'enregistrer</a>
+                    <a href="{{ route('members.login.form') }}"><i class="fas fa-user"></i> Connexion</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Header Top -->
 
-    <!-- Header
-                                        ============================================= -->
+    <!-- Header ============================================= -->
     <header id="home">
 
         <!-- Start Navigation -->
         <nav class="navbar navbar-default attr-border navbar-sticky bootsnav">
 
             <div class="container">
+
+                <!-- Start Atribute Navigation -->
+                <div class="attr-nav">
+                    <ul>
+                        <li class="side-menu"><a href="#"><i class="fa fa-bars"></i></a></li>
+                    </ul>
+                </div>
+                <!-- End Atribute Navigation -->
 
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">

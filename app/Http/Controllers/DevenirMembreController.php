@@ -45,7 +45,7 @@ class DevenirMembreController extends Controller
 
         // Sending email to admin
 
-        Mail::to('leaderssoftomorrow@gmail.com')
+        Mail::to("contact@leadersoftomorrow-drc.com")
             ->send(new SendMailAdminMemberRegister());
 
         session()->flash('registred', 'Votre compte a été créé avec succès !');
