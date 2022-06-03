@@ -16,16 +16,18 @@ class LoginMemberController extends Controller
 
     public function login(Request $request)
     {
-        $user = User::where('name', $request->username)->first();
+        $user = User::where('name', $request->username)
+            ->first();
 
-        if(!$user || !Hash::check($request->password, $user->password))
+        $member = Membre::where('user_id',$user->id)
+            ->first();
+
+        if(!$user || !Hash::check($request->password, $user->password) || !$member)
         {
-            return redirect()->back()->with("failed","Mot de passe ou nom d\'utilisateur incorect.");
+            return redirect()->back()->with("failed","Mot de passe ou nom d'utilisateur incorect.");
         }
 
-        $membre = Membre::find($user->id);
-
-        session()->put(['member_loggedIn' => $membre]);
+        session()->put(['member_loggedIn' => $member]);
 
         return redirect()->route('members.profile');
     }

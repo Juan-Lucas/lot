@@ -30,14 +30,9 @@
             <div class="row">
                 <div class="col-md-7 col-md-offset-3">
                     @if(session()->has('registred'))
-
-                        <div class="alert alert-success" role="alert">
-                            <h4 class="alert-heading">{{ session('registred') }}!</h4>
-                            <p>Merci d'avoir pris la décision de faire bouger les choses dans votre vie afin de contruire votre futur.</p>
-                            <hr>
-                            <p class="mb-0">Vous avez pris la bonne décision. Connectez-vous a votre compte et formez-vous.</p>
-                        </div>
-
+                        <div class="alert alert-success">{{ session('registred') }}</div>
+                    @elseif(session()->has('failed'))
+                        <div class="alert alert-danger">{{ session('failed') }}</div>
                     @endif
                     <form method="post" action="{{ route('members.login') }}" id="login-form" class="white-popup-block">
 

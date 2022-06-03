@@ -45,12 +45,12 @@
                             </li>
                             <li>
                                 <a data-toggle="tab" href="#tab2" aria-expanded="false">
-                                    Orders
+                                    Mes formations
                                 </a>
                             </li>
                             <li>
                                 <a data-toggle="tab" href="#tab3" aria-expanded="false">
-                                    Edit Profile
+                                    Editer Profil
                                 </a>
                             </li>
                         </ul>
@@ -60,12 +60,7 @@
                             <!-- Single Tab -->
                             <div id="tab1" class="tab-pane fade active in">
                                 <div class="info title">
-                                    <p>
-                                        Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting. earnestly advantage estimable extensive. Five settle education him departure any arranging one prevailed. Their end whole migh
-                                    </p>
-                                    <p>
-                                        Affixed civilly moments promise explain fertile in. Assurance advantage belonging happiness departure so of. Now improving and one sincerity intention allowance commanded not. Oh an am frankness be necessary earnestly advantage estimable extensive. Five settle genius excuse. Deal say over you age from. Comparison new ham melancholy son themselves.
-                                    </p>
+                                    <p>{{ session('member_loggedIn')->bio }}</p>
                                     <ul>
                                         <li>
                                             Contact <span>+123 456 7890</span>

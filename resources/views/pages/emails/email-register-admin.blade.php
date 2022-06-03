@@ -187,7 +187,7 @@
                                         <tr>
                                             <td width="12" align="left" valign="middle" style="font-size:0px; line-height:0px; width:12px;"><a href="#" target="_blank" style="text-decoration:none;"><img src="/assets/pilot/images/templates/img_1.png" width="12" height="16" alt="" border="0" style="display:block; max-width:12px;" /></a></td>
                                             <td width="7" style="width:7px; font-size:0px; line-height:0px;" class="em_w5">&nbsp;</td>
-                                            <td class="em_grey em_font_11" align="left" valign="middle" style="font-family: Arial, sans-serif; font-size: 13px; line-height: 15px; color:#434343;"><a href="#" target="_blank" style="text-decoration:none; color:#434343;">Leaders Of Tomorrow</a> &bull; 750 Av. Kasangulu &bull; Lubumbashi, Haut-Katanga</td>
+                                            <td class="em_grey em_font_11" align="left" valign="middle" style="font-family: Arial, sans-serif; font-size: 13px; line-height: 15px; color:#434343;"> 750 Av. Kasangulu &bull; Lubumbashi, Haut-Katanga</td>
                                         </tr>
                                     </table>
                                 </td>

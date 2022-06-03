@@ -23,7 +23,7 @@ class Membre extends Model
 
     public function user_account(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
     }
 
     public  function nomcomplet(): Attribute

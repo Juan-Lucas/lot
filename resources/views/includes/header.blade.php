@@ -45,78 +45,88 @@
 
 <body>
 
-    <!-- Preloader Start -->
-    <div class="se-pre-con"></div>
-    <!-- Preloader Ends -->
+<!-- Preloader Start -->
+<div class="se-pre-con"></div>
+<!-- Preloader Ends -->
 
-    <!-- Start Header Top
-    ============================================= -->
-    <div class="top-bar-area address-two-lines bg-dark text-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 address-info">
-                    <div class="info box">
-                        <ul>
-                            <li>
-                                <span><i class="fas fa-map"></i> Adresse</span>750, av Kasangulu
-                            </li>
-                            <li>
-                                <span><i class="fas fa-envelope-open"></i> Email</span>contact@leadersoftomorrow-drc.com
-                            </li>
-                            <li>
-                                <span><i class="fas fa-phone"></i> Contact</span>+243 970 182 255
-                            </li>
-                        </ul>
-                    </div>
+<!-- Start Header Top
+============================================= -->
+<div class="top-bar-area address-two-lines bg-dark text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 address-info">
+                <div class="info box">
+                    <ul>
+                        <li>
+                            <span><i class="fas fa-map"></i> Adresse</span>750, av Kasangulu
+                        </li>
+                        <li>
+                            <span><i class="fas fa-envelope-open"></i> Email</span>contact@leadersoftomorrow-drc.com
+                        </li>
+                        <li>
+                            <span><i class="fas fa-phone"></i> Contact</span>+243 970 182 255
+                        </li>
+                    </ul>
                 </div>
-                <div class="user-login text-right col-md-4">
-                    <a href="{{ route('members.form') }}"><i class="fas fa-edit"></i> S'enregistrer</a>
+            </div>
+            <div class="user-login text-right col-md-4">
+                <a href="{{ route('members.form') }}"><i class="fas fa-edit"></i> S'enregistrer</a>
+                @if(session()->has('member_loggedIn'))
+                    <a href="{{ route('members.logout') }}"><i class="fas fa-user"></i> Déconnexion</a>
+                @else
                     <a href="{{ route('members.login.form') }}"><i class="fas fa-user"></i> Connexion</a>
-                </div>
+                @endif
             </div>
         </div>
     </div>
-    <!-- End Header Top -->
+</div>
+<!-- End Header Top -->
 
-    <!-- Header ============================================= -->
-    <header id="home">
+<!-- Header ============================================= -->
+<header id="home">
 
-        <!-- Start Navigation -->
-        <nav class="navbar navbar-default attr-border navbar-sticky bootsnav">
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-default attr-border navbar-sticky bootsnav">
 
-            <div class="container">
+        <div class="container">
 
-                <!-- Start Atribute Navigation -->
-                <div class="attr-nav">
-                    <ul>
+            <!-- Start Atribute Navigation -->
+            <div class="attr-nav">
+                <ul>
+                   @if(session()->has('member_loggedIn'))
                         <li class="side-menu"><a href="#"><i class="fa fa-bars"></i></a></li>
-                    </ul>
-                </div>
-                <!-- End Atribute Navigation -->
-
-                <!-- Start Header Navigation -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand" href="{{ route('home') }}">
-                        <img src="{{ asset('/assets/img/183×50.png') }}" width="183px" height="50px" class="logo" alt="Logo">
-                        <h4>Leaders Of Tomorrow</h4>
-                    </a>
-                </div>
-                <!-- End Header Navigation -->
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-
-                @include('includes.navbar')
-
-
+                    @else
+                        <li class=""><a href="#"><i class="fa fa-bars"></i></a></li>
+                    @endif
+                </ul>
             </div>
+            <!-- End Atribute Navigation -->
 
-            <!-- End Side Menu -->
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="{{ route('home') }}">
+                    <img src="{{ asset('/assets/img/183×50.png') }}" width="183px" height="50px" class="logo" alt="Logo">
+                    <h4>Leaders Of Tomorrow</h4>
+                </a>
+            </div>
+            <!-- End Header Navigation -->
 
-        </nav>
-        <!-- End Navigation -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
 
-    </header>
-    <!-- End Header -->
+            @include('includes.navbar')
+
+
+        </div>
+
+        @include('includes.sidebar')
+
+        <!-- End Side Menu -->
+
+    </nav>
+    <!-- End Navigation -->
+
+</header>
+<!-- End Header -->

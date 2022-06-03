@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('membres', function (Blueprint $table) {
-//            $table->foreignId('user_id')->unsigned()->constrained();
+            $table->longText('bio');
         });
     }
 

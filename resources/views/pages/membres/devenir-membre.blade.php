@@ -28,6 +28,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 ">
+                    @foreach ($errors->all() as $message)
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @endforeach
                     <form method="post" action="{{ route('members.register') }}" id="register-form" class="white-popup-block">
 
                         @csrf
@@ -61,28 +64,28 @@
                                         <input class="form-control" name="nomcomplet" id="nomcomplet" type="text">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="email">Addresse email</label>
-                                        <input class="form-control" name="email" id="email" type="email">
+                                        <label for="phone">Téléphone</label>
+                                        <input class="form-control" name="phone" id="email" type="email">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="email">Adresse email</label>
+                                        <input class="form-control" name="email" id="email" type="email">
+                                    </div>
                                     <div class="form-group col-md-6">
                                         <label for="profession">Profession</label>
                                         <input class="form-control" name="profession" type="text" id="profession">
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="age">Age</label>
-                                        <input class="form-control" name="age" type="number" id="age">
-                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group col-md-6">
-                                        <label for="username">Nom d'utilisateur</label>
-                                        <input class="form-control" name="username" id="username" type="text">
+                                        <label for="age">Age</label>
+                                        <input class="form-control" name="age" type="number" id="age">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="sexe">Sexe</label>
@@ -91,6 +94,14 @@
                                             <option value="Homme">Homme</option>
                                             <option value="Femme">Femme</option>
                                         </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label for="username">Nom d'utilisateur</label>
+                                        <input class="form-control" name="username" id="username" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -108,12 +119,16 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="row">
-                                    <button type="submit">
-                                        S'enregister
-                                    </button>
+                                    <div class="form-group col-md-6">
+                                        <button type="submit">
+                                            S'enregister
+                                        </button>
+                                    </div>
+                                   <div class="form-group col-md-6">
+                                       <p class="link-bottom">Etes-vous deja membre ? <a href="{{ route('members.login.form') }}">Connectez-vous</a></p>
+                                   </div>
                                 </div>
                             </div>
-                            <p class="link-bottom">Etes-vous deja membre ? <a href="{{ route('members.login.form') }}">Connectez-vous</a></p>
                         </div>
                     </form>
                 </div>

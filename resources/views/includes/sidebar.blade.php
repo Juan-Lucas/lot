@@ -6,11 +6,14 @@
             <img src="{{ asset('/assets/img/800x800.png') }}" alt="Profile">
         </div>
         <ul>
-            <li><a href="#">Profil</a></li>
-            <li><a href="#">Mes formations</a></li>
-            <li><a href="#">Formations récentes</a></li>
-            <li><a href="#">Modifier mon profil</a></li>
-            <li><a href="#">Déconnexion</a></li>
+            @if(!session()->has('member_loggedIn'))
+            @else
+                <li>Nom d'utilisateur : {{ session('member_loggedIn')->user_account->name }}</li>
+                <li>Email : {{ session('member_loggedIn')->user_account->email }}</li>
+            @endif
+            <ul class="title"></ul>
+            <li><a href="{{ route('members.profile') }}">Profil</a></li>
+            <li><a href="{{ route('members.logout') }}">Déconnexion</a></li>
         </ul>
     </div>
     <div class="widget social">
@@ -19,7 +22,6 @@
             <li class="facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
             <li class="twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
             <li class="pinterest"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-            <li class="dribbble"><a href="#"><i class="fab fa-dribbble"></i></a></li>
         </ul>
     </div>
 </div>
