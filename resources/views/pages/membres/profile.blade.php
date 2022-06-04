@@ -4,24 +4,24 @@
 @section('content')
 
 
-{{--    <!-- Start Breadcrumb--}}
-{{--                                            ============================================= -->--}}
-{{--    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light"--}}
-{{--         style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-md-12">--}}
-{{--                    <h1>Mon profil</h1>--}}
-{{--                    <ul class="breadcrumb">--}}
-{{--                        <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Accueil</a></li>--}}
-{{--                        <li><a href="{{ route('members.profile') }}">/</a></li>--}}
-{{--                        <li class="active">Mon profil</li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <!-- End Breadcrumb -->--}}
+    {{--    <!-- Start Breadcrumb--}}
+    {{--                                            ============================================= -->--}}
+    {{--    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light"--}}
+    {{--         style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">--}}
+    {{--        <div class="container">--}}
+    {{--            <div class="row">--}}
+    {{--                <div class="col-md-12">--}}
+    {{--                    <h1>Mon profil</h1>--}}
+    {{--                    <ul class="breadcrumb">--}}
+    {{--                        <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Accueil</a></li>--}}
+    {{--                        <li><a href="{{ route('members.profile') }}">/</a></li>--}}
+    {{--                        <li class="active">Mon profil</li>--}}
+    {{--                    </ul>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
+    {{--    <!-- End Breadcrumb -->--}}
 
 
 
@@ -29,9 +29,16 @@
     ============================================= -->
     <div class="students-profiel adviros-details-area default-padding">
         <div class="container">
+            @if(session()->has('updated'))
+                <div class="alert alert-success">{{ session('updated') }}</div>
+            @elseif(session()->has('failed'))
+                <div class="alert alert-danger">{{ session('failed') }}</div>
+            @elseif(session('changed'))
+                <div class="alert alert-success">{{ session('changed') }}</div>
+            @endif
             <div class="row">
                 <div class="col-md-5 thumb">
-                    <img src="{{ asset('/assets/img/team/6.jpg') }}" alt="Thumb">
+                    <img src="{{ asset('storage/'.session('member_loggedIn')->photo) }}" alt="Photo de profil">
                 </div>
                 <div class="col-md-7 info main-content">
                     <!-- Star Tab Info -->
@@ -63,13 +70,16 @@
                                     <p>{{ session('member_loggedIn')->bio }}</p>
                                     <ul>
                                         <li>
-                                            Contact <span>+123 456 7890</span>
+                                            Nom complet <span>{{ session('member_loggedIn')->nomcomplet }}</span>
                                         </li>
                                         <li>
-                                            Email <span>info@teacherdomain.com</span>
+                                            Contact <span>{{ session('member_loggedIn')->phone }}</span>
                                         </li>
                                         <li>
-                                            Address <span>California, TX 70240 </span>
+                                            Email <span>{{ session('member_loggedIn')->email }}</span>
+                                        </li>
+                                        <li>
+                                            Profession <span>{{ session('member_loggedIn')->profession }}</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -136,63 +146,108 @@
                             <!-- Single Tab -->
                             <div id="tab3" class="tab-pane">
                                 <div class="info title">
-                                    <p>
-                                        Esteem spirit temper too say adieus who direct esteem. It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed. Expect relied do we genius is. On as around spirit of hearts genius. Is raptures daughter branched laughter peculiar in settling.
-                                    </p>
                                     <div class="row">
-                                        <form action="#" class="contact-form">
+                                        <form method="post" action="{{ route('members.profile.update') }}" enctype="multipart/form-data" >
+
+                                            @method('put')
+
+                                            @csrf
+
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" placeholder="Name" type="text">
+                                                    <label>Nom complet</label>
+                                                    <input class="form-control" name="nomcomplet" value="{{ session('member_loggedIn')->nomcomplet }}" type="text">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" placeholder="Email" type="email">
+                                                    <label>Téléphone</label>
+                                                    <input class="form-control" name="phone" value="{{ session('member_loggedIn')->phone }}" type="tel">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Adresse email</label>
+                                                    <input class="form-control" name="email" value="{{ session('member_loggedIn')->email }}" type="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Profession</label>
+                                                    <input class="form-control" name="profession" value="{{ session('member_loggedIn')->profession }}" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Age</label>
+                                                    <input class="form-control" name="age" value="{{ session('member_loggedIn')->age }}" type="number">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label>Sexe</label>
+                                                    <select class="form-control" name="sexe" id="sexe" style="height: 50px">
+                                                        <option value="">---------- Sélectionner votre genre ----------</option>
+                                                        <option {{ session('member_loggedIn')->sexe === 'Homme' ? 'selected' : '' }} value="Homme">Homme</option>
+                                                        <option {{ session('member_loggedIn')->sexe === 'Femme' ? 'selected' : '' }} value="Femme">Femme</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <input class="form-control" placeholder="Phone" type="text">
+                                                <div class="row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="username">Nom d'utilisateur</label>
+                                                        <input class="form-control" name="username" value="{{ session('member_loggedIn')->user_account->name }}" id="username" type="text">
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="photo">Photo</label>
+                                                        <input class="form-control" name="photo"  id="photo" type="file">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group comments">
-                                                    <textarea class="form-control" placeholder="About Yourself"></textarea>
+                                                    <label>Biographie</label>
+                                                    <textarea name="bio" class="form-control">{{ session('member_loggedIn')->bio }}</textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <button type="submit">
-                                                    Update
+                                                    Modifier
                                                 </button>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="update-pass">
-                                        <h4>Change Password</h4>
-                                        <p>
-                                            Esteem spirit temper too say adieus who direct esteem. It esteems luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed. Expect relied do we genius is. On as around spirit of hearts genius. Is raptures daughter branched laughter peculiar in settling.
-                                        </p>
+                                        <h4>Modifier votre mot de passe</h4>
                                         <div class="row">
-                                            <form action="#" class="contact-form">
+                                            <form method="post" action="{{ route('members.profile.update.password') }}">
+
+                                                @method('put')
+
+                                                @csrf
+
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <input class="form-control" placeholder="Chose Password" type="text">
+                                                        <label>Nouveau mot de passe</label>
+                                                        <input class="form-control" name="password" type="password">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <input class="form-control" placeholder="Retype Password" type="text">
+                                                        <label>Confirmer nouveau mot de passe</label>
+                                                        <input class="form-control" name="confirm_password" type="password">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <input class="form-control" placeholder="Old Password" type="text">
+                                                        <label>Ancien mot de passe</label>
+                                                        <input class="form-control" name="old_password" type="password">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <button type="submit">
-                                                        Update
+                                                        Modifier
                                                     </button>
                                                 </div>
                                             </form>

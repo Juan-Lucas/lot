@@ -31,6 +31,7 @@ class DevenirMembreController extends Controller
             'nomcomplet' => $request->nomcomplet,
             'email' => $request->email,
             'profession' => $request->profession,
+            'phone' => $request->phone,
             'age' => $request->age,
             'sexe' => $request->sexe,
             'user_id' => $user['id']

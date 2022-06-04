@@ -15,9 +15,11 @@ class Membre extends Model
         'nomcomplet',
         'email',
         'profession',
+        'phone',
         'age',
         'sexe',
-        'user_id'
+        'user_id',
+        'photo',
     ];
 
 

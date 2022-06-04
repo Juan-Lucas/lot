@@ -20,6 +20,8 @@ use App\Http\Controllers\LogoutMemberController;
 use App\Http\Controllers\ProfileMemberController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SendMailController;
+use App\Http\Controllers\UpdateMemberController;
+use App\Http\Controllers\UpdatePasswordMemberController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -98,6 +100,12 @@ Route::prefix('/members/')->group(function (){
 
     Route::get('profile', ProfileMemberController::class)
     ->name('members.profile');
+
+    Route::put('profile/update', UpdateMemberController::class)
+        ->name('members.profile.update');
+
+    Route::put('/profile/update/password', UpdatePasswordMemberController::class)
+        ->name('members.profile.update.password');
 });
 
 

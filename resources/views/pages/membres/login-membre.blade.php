@@ -4,24 +4,24 @@
 @section('content')
 
 
-{{--    <!-- Start Breadcrumb--}}
-{{--                                            ============================================= -->--}}
-{{--    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light"--}}
-{{--         style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-md-12">--}}
-{{--                    <h1>Se Connecter</h1>--}}
-{{--                    <ul class="breadcrumb">--}}
-{{--                        <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Accueil</a></li>--}}
-{{--                        <li><a href="{{ route('members.login.form') }}">/</a></li>--}}
-{{--                        <li class="active">Se Connecter</li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <!-- End Breadcrumb -->--}}
+    {{--    <!-- Start Breadcrumb--}}
+    {{--                                            ============================================= -->--}}
+    {{--    <div class="breadcrumb-area shadow dark text-center bg-fixed text-light"--}}
+    {{--         style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">--}}
+    {{--        <div class="container">--}}
+    {{--            <div class="row">--}}
+    {{--                <div class="col-md-12">--}}
+    {{--                    <h1>Se Connecter</h1>--}}
+    {{--                    <ul class="breadcrumb">--}}
+    {{--                        <li><a href="{{ route('home') }}"><i class="fas fa-home"></i> Accueil</a></li>--}}
+    {{--                        <li><a href="{{ route('members.login.form') }}">/</a></li>--}}
+    {{--                        <li class="active">Se Connecter</li>--}}
+    {{--                    </ul>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
+    {{--    <!-- End Breadcrumb -->--}}
 
     <!-- Start Login
     ============================================= -->
@@ -33,6 +33,8 @@
                         <div class="alert alert-success">{{ session('registred') }}</div>
                     @elseif(session()->has('failed'))
                         <div class="alert alert-danger">{{ session('failed') }}</div>
+                    @elseif(session('changed'))
+                        <div class="alert alert-success">{{ session('changed') }}</div>
                     @endif
                     <form method="post" action="{{ route('members.login') }}" id="login-form" class="white-popup-block">
 
@@ -64,7 +66,7 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <label for="username">Nom d'utilisateur</label>
-                                        <input class="form-control" name="username" id="username" type="text">
+                                        <input class="form-control" name="username" value="{{ old('username') }}" id="username" type="text">
                                     </div>
                                 </div>
                             </div>

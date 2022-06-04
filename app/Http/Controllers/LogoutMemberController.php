@@ -12,7 +12,7 @@ class LogoutMemberController extends Controller
         {
             session()->pull('member_loggedIn');
 
-            return redirect()->route('members.login');
+            return redirect()->route('members.login.form');
         }
     }
 }

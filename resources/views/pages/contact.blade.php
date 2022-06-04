@@ -91,7 +91,7 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group">
-                                        <label>Nom complet : </label>
+                                        <label>Nom complet</label>
                                         <input class="form-control" id="name" name="name"  type="text">
 
                                     </div>
@@ -100,7 +100,7 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group">
-                                        <label>Adresse mail : </label>
+                                        <label>Adresse mail</label>
                                         <input class="form-control" id="email" name="email"
                                             type="email">
 
@@ -110,7 +110,7 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group">
-                                        <label>Téléphone : </label>
+                                        <label>Téléphone</label>
                                         <input class="form-control" id="phone" name="phone"
                                             type="tel">
 
@@ -120,7 +120,7 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group comments">
-                                        <label>Message : </label>
+                                        <label>Message </label>
                                         <textarea class="form-control" id="message" name="message" ></textarea>
                                     </div>
                                 </div>
