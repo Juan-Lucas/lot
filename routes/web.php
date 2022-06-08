@@ -17,6 +17,7 @@ use App\Http\Controllers\FormationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginMemberController;
 use App\Http\Controllers\LogoutMemberController;
+use App\Http\Controllers\MemberSubscriptionController;
 use App\Http\Controllers\ProfileMemberController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SendMailController;
@@ -106,11 +107,13 @@ Route::prefix('/members/')->group(function (){
 
     Route::put('/profile/update/password', UpdatePasswordMemberController::class)
         ->name('members.profile.update.password');
+
+    Route::get('/subscription/{formation_id}', [MemberSubscriptionController::class, 'index'])
+        ->name('members.subscription');
 });
 
 
 // ADMIN ROUTES
-
 
 Route::prefix('/admin/')->group(function (){
     Route::any('login', LoginController::class)

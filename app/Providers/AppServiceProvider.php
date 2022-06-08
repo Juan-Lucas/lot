@@ -36,17 +36,22 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('pages.formations.formations', function($view){
-            $view->with('formations', Formation::with('category_formation')->get());
+            $view->with('formations', Formation::with('category_formation')
+                ->get());
         });
 
         view()->composer('index', function($view){
-            $view->with('formations', Formation::with('category_formation')->get());
-            $view->with('courses', Formation::with('category_formation')->paginate(4));
-            $view->with('categories', CategoryFormation::with('formations')->get());
+            $view->with('formations', Formation::with('category_formation')
+                ->get());
+            $view->with('courses', Formation::with('category_formation')
+                ->orderBy('created_at', 'desc')
+                ->paginate(4));
+            $view->with('categories', CategoryFormation::with('formations')
+                ->get());
         });
 
         view()->composer('includes.footer', function ($view){
-            $view->with('formations', Formation::paginate(2));
+            $view->with('formations', Formation::orderBy('created_at', 'desc')->paginate(2));
         });
     }
 }

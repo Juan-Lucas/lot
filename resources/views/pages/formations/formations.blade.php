@@ -30,6 +30,10 @@
 
                 <div class="popular-courses-items">
 
+                    @if(session()->has('failed'))
+                        <div class="alert alert-danger">{{ session('failed') }}</div>
+                    @endif
+
                     @forelse ($formations as $formation)
 
                         <!-- Single Item -->
@@ -41,11 +45,13 @@
                                     <a href="{{ route('formations.show', $formation) }}">
                                         <img src="{{ asset('storage/'.$formation->image) }}" alt="Thumb">
                                     </a>
+{{--                                    @if(!session()->has('subscribed'))--}}
                                     <div class="overlay">
-                                        <a class="btn btn-theme effect btn-sm" href="#">
+                                        <a class="btn btn-theme effect btn-sm" href="{{ route('members.subscription', $formation) }}">
                                             <i class="fas fa-chart-bar"></i> Inscrivez-vous maintenant
                                         </a>
                                     </div>
+{{--                                    @endif--}}
                                 </div>
                                 <div class="info">
                                     <h4><a href="{{ route('formations.show', $formation) }}">{{ $formation->title }}</a></h4>

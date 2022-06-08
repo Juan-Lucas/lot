@@ -93,49 +93,26 @@
                                         <table class="table table-striped">
                                             <thead>
                                             <tr>
-                                                <th>Order</th>
-                                                <th>Title</th>
-                                                <th>Purchase Date</th>
-                                                <th>Price</th>
-                                                <th>Access</th>
+                                                <th>Id</th>
+                                                <th>Titre</th>
+                                                <th>Description</th>
+                                                <th>Duree</th>
+                                                <th>Categorie</th>
                                             </tr>
                                             </thead>
                                             <tbody>
+
+                                            @forelse($formations as $formation)
                                             <tr>
-                                                <td>01.</td>
-                                                <td><a href="#">Basic Web Development</a></td>
-                                                <td>12 Nov, 2018</td>
-                                                <td>$23.00</td>
-                                                <td><a href="#">Preview</a></td>
+                                                <td><a href="{{ route('formations.show', $formation) }}">{{ $formation->id }}</a></td>
+                                                <td>{{ $formation->title }}</td>
+                                                <td>{{ substr($formation->description,0,100) }}</td>
+                                                <td>{{ $formation->duration }}</td>
+                                                <td>{{ $formation->category_formation->name }}</td>
                                             </tr>
-                                            <tr>
-                                                <td>02.</td>
-                                                <td><a href="#">Software Engineering</a></td>
-                                                <td>14 Jan, 2019</td>
-                                                <td>$55.00</td>
-                                                <td><a href="#">Preview</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>03.</td>
-                                                <td><a href="#">Introduction of machine</a></td>
-                                                <td>18 Mar, 2019</td>
-                                                <td>$44.00</td>
-                                                <td><a href="#">Preview</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>04.</td>
-                                                <td><a href="#">Hidden potential</a></td>
-                                                <td>20 Feb, 2018</td>
-                                                <td>$54.00</td>
-                                                <td><a href="#">Preview</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>05.</td>
-                                                <td><a href="#">Introduction of PHP</a></td>
-                                                <td>27 Mar, 2019</td>
-                                                <td>$32.00</td>
-                                                <td><a href="#">Preview</a></td>
-                                            </tr>
+                                            @empty
+                                                Not data yet.
+                                            @endforelse
                                             </tbody>
                                         </table>
                                     </div>

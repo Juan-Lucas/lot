@@ -17,8 +17,11 @@ class FormationController extends Controller
      */
     public function __construct()
     {
-        $this->categories = CategoryFormation::with('formations')->get();
-        $this->formations = Formation::with('category_formation')->simplePaginate(3);
+        $this->categories = CategoryFormation::with('formations')
+            ->get();
+        $this->formations = Formation::with('category_formation')
+            ->orderBy('created_at', 'desc')
+            ->simplePaginate(3);
     }
 
 

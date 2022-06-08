@@ -28,6 +28,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
+                    @if(session()->has('failed'))
+                        <div class="alert alert-danger">{{ session('failed') }}</div>
+                    @elseif(session('success'))
+                        <div class="alert alert-success">{{ session('success') }}</div>
+                    @endif
                     <div class="course-details-info">
                         <!-- Star Top Info -->
                         <div class="top-info">
@@ -57,11 +62,13 @@
                                     <h4>Date</h4>
                                     <span>{{ date_format($formation->created_at,"d - m - Y") }}</span>
                                 </div>
+                                @if(!session()->has('subscribed'))
                                 <div class="align-right">
-                                    <a class="btn btn-dark effect btn-sm" href="#">
+                                    <a class="btn btn-dark effect btn-sm" href="{{ route('members.subscription', $formation) }}">
                                         <i class="fas fa-chart-bar"></i> S'inscrire
                                     </a>
                                 </div>
+                                @endif
                             </div>
                             <!-- End Course Meta -->
                         </div>
