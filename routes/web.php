@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\AddEventController;
 use App\Http\Controllers\Admin\AddFormationController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EditFormationController;
+use App\Http\Controllers\Admin\EventsController;
 use App\Http\Controllers\Admin\FormationsController;
 use App\Http\Controllers\Admin\MembersController;
 use App\Http\Controllers\Admin\ShowFormationController;
@@ -105,10 +107,10 @@ Route::prefix('/members/')->group(function (){
     Route::put('profile/update', UpdateMemberController::class)
         ->name('members.profile.update');
 
-    Route::put('/profile/update/password', UpdatePasswordMemberController::class)
+    Route::put('profile/update/password', UpdatePasswordMemberController::class)
         ->name('members.profile.update.password');
 
-    Route::get('/subscription/{formation_id}', [MemberSubscriptionController::class, 'index'])
+    Route::get('subscription/{formation_id}', [MemberSubscriptionController::class, 'index'])
         ->name('members.subscription');
 });
 
@@ -116,6 +118,7 @@ Route::prefix('/members/')->group(function (){
 // ADMIN ROUTES
 
 Route::prefix('/admin/')->group(function (){
+
     Route::any('login', LoginController::class)
         ->name('admin.login');
     Route::any('logout', LogoutController::class)
@@ -124,7 +127,7 @@ Route::prefix('/admin/')->group(function (){
         ->name('admin.dashboard');
     Route::get('formations', FormationsController::class)
         ->name('admin.formations');
-    Route::get('formations/add', AddFormationController::class)
+    Route::any('formations/add', AddFormationController::class)
         ->name('admin.formations.add');
     Route::get('formations/show/{formation_id}', ShowFormationController::class)
         ->name('admin.formations.show');
@@ -134,6 +137,11 @@ Route::prefix('/admin/')->group(function (){
         ->name('admin.formations.update');
     Route::get('members', MembersController::class)
         ->name('admin.members');
+    Route::get('events', EventsController::class)
+        ->name('admin.events');
+    Route::any('events/add', AddEventController::class)
+        ->name('admin.events.add');
+
 });
 
 

@@ -13,6 +13,6 @@ class EventController extends Controller
 
     public function show(int $event_id)
     {
-
+        
     }
 }

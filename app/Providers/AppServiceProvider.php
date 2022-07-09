@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\CategoryFormation;
+use App\Models\Event;
 use App\Models\Service;
 use App\Models\Formation;
 use Illuminate\Support\Facades\URL;
@@ -51,7 +52,13 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('includes.footer', function ($view){
-            $view->with('formations', Formation::orderBy('created_at', 'desc')->paginate(2));
+            $view->with('formations', Formation::orderBy('created_at', 'desc')
+                ->paginate(2));
+        });
+
+        view()->composer('pages.events.events', function($view){
+            $view->with('events', Event::orderBy('created_at', 'desc')
+                ->get());
         });
     }
 }

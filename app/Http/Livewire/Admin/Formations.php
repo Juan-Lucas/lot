@@ -11,7 +11,9 @@ class Formations extends Component
 
     public function mount()
     {
-        $this->formations = Formation::with('category_formation')->get();
+        $this->formations = Formation::with('category_formation')
+            ->orderBy('created_at','desc')
+            ->get();
     }
 
     public function render()

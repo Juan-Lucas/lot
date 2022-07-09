@@ -74,7 +74,9 @@
                         <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="bookmark"></i><span>Evenements</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="#">List des evenements</a></li>
+                            <li><a class="nav-link" href="{{ route('admin.events.add') }}">Ajouter un evenement</a>
+                            </li>
+                            <li><a class="nav-link" href="{{ route('admin.events') }}">Liste des evenements</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

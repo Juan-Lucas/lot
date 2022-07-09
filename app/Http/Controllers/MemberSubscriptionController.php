@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Formation;
-use App\Models\FormationMembre;
-use App\Models\Membre;
-use App\Models\User;
+// use App\Models\Formation;
+// use App\Models\FormationMembre;
+// use App\Models\Membre;
+use App\Models\{User, Formation, FormationMembre, Membre};
 use Illuminate\Http\Request;
 
 class MemberSubscriptionController extends Controller
@@ -16,7 +16,7 @@ class MemberSubscriptionController extends Controller
 
     }
 
-    public function index(int $formationId)
+    public functionindex(int $formationId)
     {
         $formation = Formation::find($formationId);
 
@@ -35,7 +35,7 @@ class MemberSubscriptionController extends Controller
         {
             if($member->id === $form->membre_id && $formation->id === $form->formation_id)
             {
-                session()->flash('failed', "Vous êtes inscrit à la formation.");
+                session()->flash('failed', "Vous êtes déjà inscrits à cette formation.");
 
                 return redirect()->route('formations.list');
             }
@@ -50,7 +50,7 @@ class MemberSubscriptionController extends Controller
 
         session()->put(['subscribed' => $formation_membre]);
 
-        session()->flash('success', "Inscription réussie.");
+        session()->flash('success', "Votre inscription à la formation a réussie.");
 
         return redirect()->route('formations.show', $formation);
     }

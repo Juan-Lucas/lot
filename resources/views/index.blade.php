@@ -12,7 +12,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner text-light">
                 <div class="item active">
-                    <div class="box-table bg-fixed shadow dark" style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">
+                    <div class="box-table bg-fixed thumb shadow dark" style="background-image: url({{ asset('/assets/img/banner/24.jpg') }});">
                         <div class="box-cell">
                             <div class="container">
                                 <div class="row">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <div class="box-table shadow bg-fixed dark" style="background-image: url({{ asset('/assets/img/banner/25.jpg') }});">
+                    <div class="box-table shadow thumb bg-fixed dark" style="background-image: url({{ asset('/assets/img/banner/25.jpg') }});">
                         <div class="box-cell">
                             <div class="container">
                                 <div class="row">
