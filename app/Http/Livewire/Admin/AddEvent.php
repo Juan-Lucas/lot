@@ -17,27 +17,10 @@ class AddEvent extends Component
     public string $description = '';
     public string $localisation = '';
     public string $heure = '';
-    public $image = '';
-
-//    protected array $rules = [
-//        'title' => 'required',
-//        'description' => 'required',
-//        'localisation' => 'required',
-//        'image' => 'required|file|mimes:jpg,png,jpeg',
-//        'heure' => 'required'
-//    ];
+    public $image = null;
 
     public function save()
     {
-//        dd([
-//            'title' => $this->title,
-//            'description' => $this->description,
-//            'localisation' => $this->localisation,
-//            'heure' => $this->heure,
-//            'image' =>  $this->image,
-//        ]);
-
-//        $this->validate();
 
         $event = Event::create([
             'title' => $this->title,

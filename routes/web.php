@@ -4,11 +4,14 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AddEventController;
 use App\Http\Controllers\Admin\AddFormationController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EditEventController;
 use App\Http\Controllers\Admin\EditFormationController;
 use App\Http\Controllers\Admin\EventsController;
 use App\Http\Controllers\Admin\FormationsController;
 use App\Http\Controllers\Admin\MembersController;
+use App\Http\Controllers\Admin\ShowEventController;
 use App\Http\Controllers\Admin\ShowFormationController;
+use App\Http\Controllers\Admin\UpdateEventController;
 use App\Http\Controllers\Admin\UpdateFormationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -141,7 +144,12 @@ Route::prefix('/admin/')->group(function (){
         ->name('admin.events');
     Route::any('events/add', AddEventController::class)
         ->name('admin.events.add');
-
+    Route::get('events/edit/{event_id}', EditEventController::class)
+        ->name('admin.events.edit');
+    Route::get('events/show/{event_id}', ShowEventController::class)
+        ->name('admin.events.show');
+    Route::put('events/update/{event_id}', UpdateEventController::class)
+        ->name('admin.events.update');
 });
 
 

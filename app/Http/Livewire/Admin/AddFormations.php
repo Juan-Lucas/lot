@@ -14,17 +14,9 @@ class AddFormations extends Component
     public $title = '';
     public $description = '';
     public $duration = '';
-    public $image = '';
+    public $image = null;
     public $category = '';
     public $categories = [];
-
-    protected $rules = [
-        'title' => 'required',
-        'description' => 'required',
-        'duration' => 'required',
-        'image' => 'required|file|mimes:jpg,png,jpeg',
-        'category' => 'required'
-    ];
 
     public function mount()
     {
@@ -33,8 +25,6 @@ class AddFormations extends Component
 
     public function save()
     {
-        $this->validate();
-
         $formation = Formation::create([
             'title' => $this->title,
             'description' => $this->description,

@@ -39,10 +39,10 @@
                                         <td>{{ $event->heure}}h</td>
                                         <td>{{ date_format($event->created_at, "d - m - Y") }}</td>
                                         <td>
-                                            <a href="{{ route('admin.formations.show', $event) }}" class="btn btn-icon icon-left btn-primary"><i
+                                            <a href="{{ route('admin.events.show', $event) }}" class="btn btn-icon icon-left btn-primary"><i
                                                         class="fa fa-info" aria-hidden="true"></i>
                                                 Détails</a>
-                                            <a href="{{ route('admin.formations.edit', $event) }}" class="btn btn-icon icon-left btn-success"><i
+                                            <a href="{{ route('admin.events.edit', $event) }}" class="btn btn-icon icon-left btn-success"><i
                                                         class="fa fa-edit" aria-hidden="true"></i>
                                                 Modifier</a>
                                         </td>

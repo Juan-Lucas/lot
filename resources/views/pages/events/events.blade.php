@@ -36,7 +36,7 @@
                             <div class="thumb">
                                 <a href="#"><img src="{{ asset('storage/'.$event->image) }}" alt="Thumb"></a>
                                 <div class="date">
-                                    <h4><span>27</span> Feb, 2019</h4>
+                                    <h4><span>{{ date_format($event->created_at, 'd') }}</span> {{ DateTime::createFromFormat('!m',date_format($event->created_at, 'm'))->format('F')  }}, {{ date_format($event->created_at, 'Y') }}</h4>
                                 </div>
                             </div>
                             <div class="info">
@@ -45,7 +45,7 @@
                                 </h4>
                                 <div class="meta">
                                     <ul>
-                                        <li><i class="fas fa-clock"></i>  {{ $event->heure }}</li>
+                                        <li><i class="fas fa-clock"></i>  {{ $event->heure }} h</li>
                                         <li><i class="fas fa-map"></i> {{ $event->localisation }} </li>
                                     </ul>
                                 </div>
@@ -53,10 +53,10 @@
                                     {{ $event->description }}
                                 </p>
                                 <a href="#" class="btn btn-dark effect btn-xsm">
-                                    <i class="fas fa-chart-bar"></i> Book Now
+                                    <i class="fas fa-chart-bar"></i> Je serai là
                                 </a>
                                 <a href="#" class="btn btn-gray btn-xsm">
-                                    <i class="fas fa-ticket-alt"></i> 23 Available
+                                    <i class="fas fa-ticket-alt"></i>Places Illimitées
                                 </a>
                             </div>
                         </div>

@@ -57,8 +57,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('pages.events.events', function($view){
-            $view->with('events', Event::orderBy('created_at', 'desc')
-                ->get());
+            $view->with('events', Event::all());
         });
     }
 }
